@@ -1,22 +1,21 @@
-﻿namespace siof.Common.Wpf
+﻿using System.Runtime.CompilerServices;
+
+namespace siof.Common.Wpf
 {
-    public class ViewModelBase: NotifyObject
+    public class ViewModelBase : NotifyObject
     {
         private bool _isLoading;
 
         public bool IsLoading
         {
-            get
-            {
-                return _isLoading;
-            }
+            get => _isLoading;
 
             set
             {
                 if (_isLoading != value)
                 {
                     _isLoading = value;
-                    OnPropertyChanged(() => IsLoading);
+                    OnPropertyChanged();
                 }
             }
         }
@@ -25,19 +24,21 @@
 
         public string IsLoadingInfoText
         {
-            get
-            {
-                return _isLoadingInfoText;
-            }
+            get => _isLoadingInfoText;
 
             set
             {
                 if (_isLoadingInfoText != value)
                 {
                     _isLoadingInfoText = value;
-                    OnPropertyChanged(() => IsLoadingInfoText);
+                    OnPropertyChanged();
                 }
             }
+        }
+
+        protected new void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            base.OnPropertyChanged(propertyName);
         }
     }
 }

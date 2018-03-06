@@ -46,10 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Behaviours\DropBehaviour.cs" />
+    <Compile Include="Converters\NotBoolToVisibilityConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\ConverterMarkupExtensionBase.cs" />
     <Compile Include="Converters\EqualsTovisibilityConverter.cs" />
     <Compile Include="Converters\StringSingleLineConverter.cs" />
+    <Compile Include="Converters\ToUpperCaseConverter.cs" />
+    <Compile Include="Converters\ToLowerCaseConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModelBase.cs" />
   </ItemGroup>
